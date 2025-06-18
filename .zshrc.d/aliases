@@ -1,4 +1,5 @@
 alias python="ptipython"
+alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias gd="git dsf"
 alias gdiff="GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_NOGLOBAL=1 HOME= XDG_CONFIG_HOME= git diff"
 alias ezpz="source <(curl -s https://raw.githubusercontent.com/saforem2/ezpz/refs/heads/main/src/ezpz/bin/utils.sh) && ezpz_setup_env"
