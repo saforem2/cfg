@@ -97,7 +97,7 @@ ZSH_COMMAND_TIME_EXCLUDE=(vim mcedit)
 export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpBNE1URT0.7U53-cf_seuvKtDXCV2xPDxUyD3bzHQh_hEAbJTAaEk"
 export COMPLETION_WAITING_DOTS="true"
 export AUTOJUMP_IGNORE_CASE=1
-export EDITOR="nvim"
+export EDITOR="$(which nvim)"
 export GOPATH=$HOME/gocode
 export TYPEWRITTEN_CURSOR="beam"
 
