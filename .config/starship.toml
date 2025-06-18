@@ -1,0 +1,410 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# format = '$all'
+
+# Which is equivalent to
+format = """
+$line_break\
+$conda\
+$python\
+$line_break\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$time\
+$username\
+$hostname\
+$localip\
+$shlvl\
+$line_break\
+$jobs\
+$battery\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
+scan_timeout = 5000
+command_timeout = 5000
+add_newline = false
+follow_symlinks = false
+
+[time]
+disabled = false
+# time_format="%H:%M:%S"
+# time_format="%r"
+time_format="%x @ %H:%M:%S"
+# format = '[#](black dimmed)[\[](#444444)[$time]($style)[\]](#444444)'
+format = '[#](black dimmed)[\[](black dimmed)[$time]($style)[\]](black dimmed)'
+# utc_time_offset="-6"
+style="fg:#838383"
+
+[username]
+format = '[\[](#444444)[$user]($style)'
+show_always = false
+# style_user = "fg:#FFFF00"
+style_user = "fg:#66A4D3"
+# format = '[$user ]($style)'
+disabled = true
+
+[hostname]
+style = "fg:#2094F3"
+format='[\[](black dimmed)[$hostname]($style)[\]](black dimmed)'
+# ssh_symbol="🤖"
+# format='[\[](black dimmed)[$ssh_symbol](bold) [$hostname]($style)[\]](black dimmed)'
+
+# ssh_symbol="@"
+# format = '\[[$symbol($version)]($style)\]'
+# style = "fg:#FFFFFF bg:#0068B5"
+# format = '\[[]]'
+# format = '[$ssh_symbol](bold blue)[$hostname](bold red) '
+# format='[$ssh_symbol](#D366A4)[\[](#444444)[$hostname]($style)[\]](#444444)'
+# style = "fg:#A4D366"
+# format='[$ssh_symbol](#D366A4)[$hostname]($style)[\]](#444444)'
+# added_style = 'bold blue'
+# format = '[\[](#444444)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](#444444) '
+# bstyle='#444444'
+# format='[\[](#444444)[$ssh_symbol](#838383)[\]](#444444) [$hostname]($style)[\]](#444444)'
+# format='[\[](#333333)[\]](#333333)[\[](#444444)[$hostname]($style)[\]](#444444)'
+# style = "fg:#00FFFF"
+# style = "fg:#A4D366"
+
+[directory]
+fish_style_pwd_dir_length = 1
+repo_root_style='underline blue'
+truncation_length = 8
+truncation_symbol = '…/'
+repo_root_format='[#](black dimmed)[\[](#444444)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[\]](#444444)'
+format='[#](black dimmed)[\[](black dimmed)[$path]($style)[$read_only]($read_only_style)[\]](black dimmed)'
+
+
+[character]
+# success_symbol = '$'
+# error_symbol = '[$](bold red) '
+# success_symbol = '[\$](#D3FF3B)'
+success_symbol = '[;](green)'
+error_symbol = '[;](#FF5252)'
+vimcmd_symbol = '[;](#AE81ff)'
+# format = "$symbol"
+
+[aws]
+format = '[\[](black dimmed)[$symbol($profile)(\($region\))(\[$duration\])]($style)[\]](black dimmed)'
+
+[bun]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[c]
+format = '[\[](black dimmed)[$symbol($version(-$name))]($style)[\]](black dimmed)'
+
+[cmake]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[cmd_duration]
+# format = '\[[⏰ $duration]($style)\]'
+format = '[\[](black dimmed)[⏱️ $duration]($style)[\]](black dimmed)'
+
+[cobol]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[conda]
+symbol = ''
+style = 'fg:bright-green'
+# env="$(echo "${environment}" | sed 's/_.*-/-\*-/g')"
+format = '[#](black dimmed dimmed)[\[](#666666)[🐍 $symbol$environment]($style)[\]](#666666)'
+
+[crystal]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[daml]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[dart]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[deno]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[docker_context]
+format = '[\[](black dimmed)[$symbol$context]($style)[\]](black dimmed)'
+
+[dotnet]
+format = '[\[](black dimmed)[$symbol($version)(🎯 $tfm)]($style)[\]](black dimmed)'
+
+[elixir]
+format = '[\[](black dimmed)[$symbol($version \(OTP $otp_version\))]($style)[\]](black dimmed)'
+
+[elm]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[erlang]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[fennel]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[fossil_branch]
+format = '[\[](black dimmed)[$symbol$branch]($style)[\]](black dimmed)'
+
+[gcloud]
+format = '[\[](black dimmed)[$symbol$account(@$domain)(\($region\))]($style)[\]](black dimmed)'
+
+[git_branch]
+symbol = '🌱 '
+# truncation_length = 12
+truncation_symbol = '...'
+# ignore_branches = ['master', 'main']
+format = '[\[](#444444)[$symbol$branch]($style)[\]](#444444)'
+
+[git_metrics]
+added_style = 'bold blue'
+format = '[\[](#444444)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](#444444) '
+
+# [git_status]
+# style = "bold italic bright-blue"
+# format = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))"
+# conflicted = "[◪◦](italic bright-magenta)"
+# ahead = "[▴│[${count}](bold white)│](italic green)"
+# behind = "[▿│[${count}](bold white)│](italic red)"
+# diverged = "[◇ ▴┤[${ahead_count}](regular white)│▿┤[${behind_count}](regular white)│](italic bright-magenta)"
+# untracked = "[◌◦](italic bright-yellow)"
+# stashed = "[◃◈](italic white)"
+# modified = "[●◦](italic yellow)"
+# staged = "[▪┤[$count](bold white)│](italic bright-cyan)"
+# renamed = "[◎◦](italic bright-blue)"
+# deleted = "[✕](italic red)"
+
+
+# [git_status]
+# conflicted = '🏳'
+# ahead = '🏎💨'
+# behind = '😰'
+# diverged = '😵'
+# up_to_date = '✓'
+# untracked = '🤷'
+# stashed = '📦'
+# modified = '📝'
+# staged = '[++\($count\)](green)'
+# renamed = '👅'
+# deleted = '🗑'
+# format = '([[\[](black dimmed)$all_status$ahead_behind\]]($style))'
+
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[golang]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[gradle]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[guix_shell]
+format = '[\[](black dimmed)[$symbol]($style)[\]](black dimmed)'
+
+[haskell]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[haxe]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[helm]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[hg_branch]
+format = '[\[](black dimmed)[$symbol$branch]($style)[\]](black dimmed)'
+
+[java]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[julia]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[kotlin]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[kubernetes]
+format = '[\[](black dimmed)[$symbol$context( \($namespace\))]($style)[\]](black dimmed)'
+
+[lua]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[memory_usage]
+format = '[\[](black dimmed)$symbol[$ram( | $swap)]($style)[\]](black dimmed)'
+
+[meson]
+format = '[\[](black dimmed)[$symbol$project]($style)[\]](black dimmed)'
+
+[nim]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[nix_shell]
+format = '[\[](black dimmed)[$symbol$state( \($name\))]($style)[\]](black dimmed)'
+
+[nodejs]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[ocaml]
+format = '[\[](black dimmed)[$symbol($version)(\($switch_indicator$switch_name\))]($style)[\]](black dimmed)'
+
+[opa]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[openstack]
+format = '[\[](black dimmed)[$symbol$cloud(\($project\))]($style)[\]](black dimmed)'
+
+[os]
+format = '[\[](black dimmed)[$symbol]($style)[\]](black dimmed)'
+
+[package]
+format = '[\[](black dimmed)[$symbol$version]($style)[\]](black dimmed)'
+
+[perl]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[php]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[pijul_channel]
+format = '[\[](black dimmed)[$symbol$channel]($style)[\]](black dimmed)'
+
+[pulumi]
+format = '[\[](black dimmed)[$symbol$stack]($style)[\]](black dimmed)'
+
+[purescript]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[python]
+symbol = '👻 '
+style = 'fg:cyan'
+# format = '[\(](#444444)[${symbol}${pyenv_prefix}${virtualenv}]($style)[\)](#444444)'
+# format = '[[\(](#444444)${symbol}${pyenv_prefix}${virtualenv}[\)](#444444)]($style)'
+# format = '[\[](#666666)[$symbol$environment]($style)[\]](#666666)'
+# format = '[\[](#cccccc)\[${symbol}${pyenv_prefix}$virtualenv\]($style)[\]](#cccccc)'
+# format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+# format = '[(\[\[](#444444)${symbol}${pyenv_prefix})(\($virtualenv\))[\](#444444)]($style))\]'
+format = '[([\(](#444444)${symbol}${pyenv_prefix}($virtualenv)[\)](#444444))]($style)'
+
+
+
+[raku]
+format = '[\[](black dimmed)[$symbol($version-$vm_version)]($style)[\]](black dimmed)'
+
+[red]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[ruby]
+format = ''
+
+[rust]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[scala]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[spack]
+format = '[\[](black dimmed)[$symbol$environment]($style)[\]](black dimmed)'
+
+[sudo]
+format = '[\[](black dimmed)[as $symbol]($style)[\]](black dimmed)'
+
+[swift]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[terraform]
+format = '[\[](black dimmed)[$symbol$workspace]($style)[\]](black dimmed)'
+
+[vagrant]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[vlang]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[zig]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+
+[solidity]
+format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
