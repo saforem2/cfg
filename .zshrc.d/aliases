@@ -1,0 +1,146 @@
+# alias ezpz="source <(curl -s https://raw.githubusercontent.com/saforem2/ezpz/refs/heads/main/src/ezpz/bin/utils.sh) && ezpz_setup_env"
+alias bp="bat -P --plain --force-colorization --pager=none --theme=Dracula"
+alias bpenv="printenv | bp --theme TwoDark -f -l log"
+alias bphist="history | bp --theme TwoDark -f -l log"
+alias bplenv="printenv | bp --theme TwoDark -f -l log | less"
+alias bplhist="history | bp --theme TwoDark -f -l log | less"
+alias cp="cp -iv"
+alias els="eza --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+alias fdu="fd -u"
+alias fzfb="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+alias gcm="git commit -m"
+alias gdk="git difftool --no-symlinks --dir-diff"
+alias glog="git log --oneline --graph --all --decorate"
+alias gst="git status -uno"
+alias icat="kitty +kitten icat"
+# alias mm="micromamba"
+# alias mpielastic='mpiexec --verbose --envall -n $NGPUS --ppn $NGPU_PER_HOST'
+alias mv="mv -vi"
+# alias nvc="NVIM_APPNAME=nvim-nvchad nvim"
+# alias nv="NVIM_APPNAME=nvim-astronvim nvim"
+# alias qsme-gpu="qstat-gpu -u foremans -f"
+# alias qsme="qstat -wpa -u $USER"
+# alias qsum='/soft/datascience/conda/2022-07-19/mconda3/bin/python ~/bin/qstatsum.py'
+alias rm="rm -i"
+# alias running_jobs="qstat -xfu $USER | egrep \"\ R\ \" | tr \".\" \" \" | awk '{print \$1}'" # | tr \"\n\" \" \""
+alias svim="NVIM_APPNAME=svim nvim"
+# alias tlsu="tspin | lsu"
+alias zo="zoxide"
+# alias zvim="NVIM_APPNAME=zvim nvim"
+# alias l="/bin/ls --color=auto"
+alias lsd="lsd -X -A --icon-theme=fancy --group-dirs=first -I '__pycache__' -I '*.DS_Store' -I '*.virtual_documents'"
+alias lse="eza --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+alias lz="eza --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+alias ls='eza --all --icons --group-directories-first -F --ignore-glob "*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*"'
+alias l='eza --git-ignore --all --icons --group-directories-first -F --ignore-glob "*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*"'
+# vim: ft=bash
+
+# vim: ft=bash
+# alias bp="bat -P --plain"
+alias mm="micromamba"
+# if you trust them, run them
+alias colorspaces="perl /Users/samforeman/bin/color-spaces.pl"
+alias colors_py="python3 /Users/samforeman/bin/colors.py"
+alias colors_24bit="bash /Users/samforeman/bin/24-bit-color.sh"
+alias img="bash /Users/samforeman/bin/img.sh"
+alias bp="bat -P --plain --force-colorization --pager=none --theme=Dracula"
+alias s='kitten ssh'
+
+alias v='nvim'                               # default Neovim config
+alias nvz='NVIM_APPNAME=nvim-lazyvim nvim'   # LazyVim
+alias nvc='NVIM_APPNAME=nvim-nvc nvim'       # NvChad
+alias nvk='NVIM_APPNAME=nvim-kickstart nvim' # Kickstart
+alias nva='NVIM_APPNAME=nvim-astrovim nvim'  # AstroVim
+alias nvl='NVIM_APPNAME=nvim-lunarvim nvim'  # LunarVim
+alias nvq="NVIM_APPNAME=nvim-quarto nvim"
+alias nv="NVIM_APPNAME=nvim-astronvim nvim" # AstroNvim
+alias nvs="NVIM_APPNAME=nvim-astrosam nvim" # AstroNvim
+alias qvim="NVIM_APPNAME=qvim nvim"
+alias zvim="NVIM_APPNAME=lazyvim nvim"
+
+alias bplenv="printenv | bp --theme TwoDark -f -l log | less"
+# alias gcm="git commit -m"
+# alias ls="lsd --group-dirs first -A"
+# alias ls='eza --group-directories-first -A --icons always'
+alias today='date "+%Y-%m-%d"'
+alias stc="set_tab_color"
+alias kc="khal calendar"
+
+alias lsu="less -Su"
+alias tlsu="tspin | lsu"
+
+# alias gdk='git difftool --no-symlinks --dir-diff'
+# alias gd="git difftool --no-symlinks --dir-diff"
+alias d="kitty +kitten diff"
+alias gd="git dsf"
+alias gdiff="GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_NOGLOBAL=1 HOME= XDG_CONFIG_HOME= git diff"
+
+# alias gdiff="GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_NOGLOBAL=1 HOME= XDG_CONFIG_HOME= git diff"
+# alias ezpz="source <(curl -s https://raw.githubusercontent.com/saforem2/ezpz/refs/heads/main/src/ezpz/bin/utils.sh) && ezpz_setup_env"
+# alias bp="bat -P --plain --force-colorization --pager=none --theme=Dracula"
+# alias bpenv="printenv | bp --theme TwoDark -f -l log"
+# alias bphist="history | bp --theme TwoDark -f -l log"
+# alias bplenv="printenv | bp --theme TwoDark -f -l log | less"
+# alias bplhist="history | bp --theme TwoDark -f -l log | less"
+# alias cp="cp -v"
+# alias els="eza --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+# alias fdu="fd -u"
+# alias fzfb="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+# alias gcm="git commit -m"
+# alias gdk="git difftool --no-symlinks --dir-diff"
+# alias glog="git log --oneline --graph --all --decorate"
+# alias gst="git status -uno"
+# alias icat="kitty +kitten icat"
+# alias l="/bin/ls --color=auto"
+# alias lsd="lsd -X -A --icon-theme=fancy --group-dirs=first -I '__pycache__' -I '*.DS_Store' -I '*.virtual_documents'"
+# alias lse="eza --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+# alias lsu="less -Su"
+# alias lz="eza --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+# alias mm="micromamba"
+# alias mpielastic='mpiexec --verbose --envall -n $NGPUS --ppn $NGPU_PER_HOST'
+# alias mv="mv -v"
+# alias nvc="NVIM_APPNAME=nvim-nvchad nvim"
+# alias nv="NVIM_APPNAME=nvim-astronvim nvim"
+# alias qsme-gpu="qstat-gpu -u foremans -f"
+# alias qsme="qstat -wpa -u $USER"
+# alias qsum='/soft/datascience/conda/2022-07-19/mconda3/bin/python ~/bin/qstatsum.py'
+# alias rm="rm -i"
+# alias running_jobs="qstat -xfu $USER | egrep \"\ R\ \" | tr \".\" \" \" | awk '{print \$1}'" # | tr \"\n\" \" \""
+# alias svim="NVIM_APPNAME=svim nvim"
+# alias tlsu="tspin | lsu"
+# alias zo="zoxide"
+# alias zvim="NVIM_APPNAME=zvim nvim"
+# alias ls='eza --all --icons --group-directories-first -F --ignore-glob "*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*"'
+# alias l='eza --git-ignore --all --icons --group-directories-first -F --ignore-glob "*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*"'
+# vim: ft=bash
+alias config='git --git-dir=/Users/samforeman/.cfg/ --work-tree=/Users/samforeman'
+
+# Function to set the tab color in Kitty terminal
+alias stc_aurora="set_tab_color '#A6EDFF'"
+alias stc_polaris="set_tab_color '#FFCCCC'"
+alias stc_red="set_tab_color '#FFCACA'"
+alias stc_blue="set_tab_color '#A6EDFF'"
+alias stc_dark_blue="set_tab_color '#1E3A5F'"
+alias stc_light_blue="set_tab_color '#A6EDFF'"
+alias stc_yellow="set_tab_color '#FFFFCA'"
+alias stc_dark_yellow="set_tab_color '#3C3C1E'"
+alias stc_light_yellow="set_tab_color '#FFFFCA'"
+alias stc_purple="set_tab_color '#D6C6FF'"
+alias stc_dark_purple="set_tab_color '#3C1E3C'"
+alias stc_light_purple="set_tab_color '#D6C6FF'"
+alias stc_dark_orange="set_tab_color '#3C1E1E'"
+alias stc_orange="set_tab_color '#FFD6C6'"
+alias stc_light_orange="set_tab_color '#FFD6C6'"
+alias stc_green="set_tab_color '#C6FFCA'"
+alias stc_dark_green="set_tab_color '#1E3A1F'"
+alias stc_light_green="set_tab_color '#C6FFCA'"
+alias stc_light="set_tab_color '#F5F5F5'"
+alias stc_gray="set_tab_color '#D6D6D6'"
+alias stc_light_gray="set_tab_color '#D6D6D6'"
+alias stc_white_gray="set_tab_color '#F5F5F5'"
+alias stc_dark="set_tab_color '#1E1E1E'"
+alias stc_dark_gray="set_tab_color '#3C3C3C'"
+alias stc_black="set_tab_color ''#000000'"
+alias stc_black_gray="set_tab_color ''#1E1E1E'"
+alias stc_white="set_tab_color '#FFFFFF'"
+
