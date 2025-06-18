@@ -1,4 +1,5 @@
 # alias ezpz="source <(curl -s https://raw.githubusercontent.com/saforem2/ezpz/refs/heads/main/src/ezpz/bin/utils.sh) && ezpz_setup_env"
+alias cst="config status -uno"
 alias bp="bat -P --plain --force-colorization --pager=none --theme=Dracula"
 alias bpenv="printenv | bp --theme TwoDark -f -l log"
 alias bphist="history | bp --theme TwoDark -f -l log"
