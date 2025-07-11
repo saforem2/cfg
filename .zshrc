@@ -3,49 +3,14 @@
 # Path to your oh-my-zsh installation.
 # export ZSH=$HOME/.oh-my-zsh
 
-# ezpz_savejobenv() {
-#     file=$(mktemp)
-#     curl -Ls https://raw.githubusercontent.com/saforem2/ezpz/main/src/ezpz/bin/savejobenv > "${file}"
-#     source "${file}" || exit
-# }
-#
-# ezpz_getjobenv() {
-#     file=$(mktemp)
-#     curl -Ls https://raw.githubusercontent.com/saforem2/ezpz/main/src/ezpz/bin/getjobenv > "${file}"
-#     source "${file}" || exit
-# }
-#
-
 ezpz_utils() {
-    # file=$(mktemp)
-    # curl -Ls https://raw.githubusercontent.com/saforem2/ezpz/main/src/ezpz/bin/utils.sh > "${file}"
-    # echo "Saving 'utils.sh' to ${file} and sourcing..."
-    # source "${file}" || exit
-    source /dev/stdin <<< $(curl -Ls 'https://raw.githubusercontent.com/saforem2/ezpz/main/src/ezpz/bin/utils.sh')
+    source <(curl -L https://bit.ly/ezpz-utils)
 }
 
-# trySaveJob() {
-#     # ezpz_utils && ezpz_setup_job
-#     ezpz_utils
-#     # which ezpz_setup_job
-#     ezpz_setup_job
-# }
-#
+
 setup_alcf_env() {
-  source <(curl -s 'https://raw.githubusercontent.com/saforem2/ezpz/refs/heads/main/src/ezpz/bin/utils.sh')
-  ezpz_setup_job
+    ezpz_utils && ezpz_setup_job
 }
-
-
-# set_proxy_alcf() {
-#     # proxy settings
-#     export HTTP_PROXY="http://proxy-01.pub.alcf.anl.gov:3128"
-#     export HTTPS_PROXY="http://proxy-01.pub.alcf.anl.gov:3128"
-#     export http_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
-#     export https_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
-#     export ftp_proxy="http://proxy-01.pub.alcf.anl.gov:3128"
-#     export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
-# }
 
 set_proxy_alcf() {
     # proxy settings
@@ -54,6 +19,8 @@ set_proxy_alcf() {
     export http_proxy="http://proxy.alcf.anl.gov:3128"
     export https_proxy="http://proxy.alcf.anl.gov:3128"
     export ftp_proxy="http://proxy.alcf.anl.gov:3128"
+    # no_proxy ???
+    # export no_proxy="admin,polaris-adminvm-01,localhost,*.cm.polaris.alcf.anl.gov,polaris-*,*.polaris.alcf.anl.gov,*.alcf.anl.gov"
 }
 
 # if [[ $(hostname) == theta* ]]; then
