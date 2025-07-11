@@ -109,13 +109,13 @@ disabled = false
 # time_format="%H:%M:%S"
 # time_format="%r"
 time_format="%x @ %H:%M:%S"
-# format = '[#](black dimmed)[\[](#444444)[$time]($style)[\]](#444444)'
-format = '[#](black dimmed)[\[](black dimmed)[$time]($style)[\]](black dimmed)'
+# format = '[#](white dimmed)[\[](white dimmed)[$time]($style)[\]](white dimmed)'
+format = '[#](white dimmed)[\[](white dimmed)[$time]($style)[\]](white dimmed)'
 # utc_time_offset="-6"
 style="fg:#838383"
 
 [username]
-format = '[\[](#444444)[$user]($style)'
+format = '[\[](white dimmed)[$user]($style)'
 show_always = false
 # style_user = "fg:#FFFF00"
 style_user = "fg:#66A4D3"
@@ -124,23 +124,23 @@ disabled = true
 
 [hostname]
 style = "fg:#2094F3"
-format='[\[](black dimmed)[$hostname]($style)[\]](black dimmed)'
+format='[\[](white dimmed)[$hostname]($style)[\]](white dimmed)'
 # ssh_symbol="🤖"
-# format='[\[](black dimmed)[$ssh_symbol](bold) [$hostname]($style)[\]](black dimmed)'
+# format='[\[](white dimmed)[$ssh_symbol](bold) [$hostname]($style)[\]](white dimmed)'
 
 # ssh_symbol="@"
 # format = '\[[$symbol($version)]($style)\]'
 # style = "fg:#FFFFFF bg:#0068B5"
 # format = '\[[]]'
 # format = '[$ssh_symbol](bold blue)[$hostname](bold red) '
-# format='[$ssh_symbol](#D366A4)[\[](#444444)[$hostname]($style)[\]](#444444)'
+# format='[$ssh_symbol](#D366A4)[\[](white dimmed)[$hostname]($style)[\]](white dimmed)'
 # style = "fg:#A4D366"
-# format='[$ssh_symbol](#D366A4)[$hostname]($style)[\]](#444444)'
+# format='[$ssh_symbol](#D366A4)[$hostname]($style)[\]](white dimmed)'
 # added_style = 'bold blue'
-# format = '[\[](#444444)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](#444444) '
-# bstyle='#444444'
-# format='[\[](#444444)[$ssh_symbol](#838383)[\]](#444444) [$hostname]($style)[\]](#444444)'
-# format='[\[](#333333)[\]](#333333)[\[](#444444)[$hostname]($style)[\]](#444444)'
+# format = '[\[](white dimmed)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](white dimmed) '
+# bstyle='white dimmed'
+# format='[\[](white dimmed)[$ssh_symbol](#838383)[\]](white dimmed) [$hostname]($style)[\]](white dimmed)'
+# format='[\[](#333333)[\]](#333333)[\[](white dimmed)[$hostname]($style)[\]](white dimmed)'
 # style = "fg:#00FFFF"
 # style = "fg:#A4D366"
 
@@ -149,8 +149,8 @@ fish_style_pwd_dir_length = 1
 repo_root_style='underline blue'
 truncation_length = 8
 truncation_symbol = '…/'
-repo_root_format='[#](black dimmed)[\[](#444444)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[\]](#444444)'
-format='[#](black dimmed)[\[](black dimmed)[$path]($style)[$read_only]($read_only_style)[\]](black dimmed)'
+repo_root_format='[#](white dimmed)[\[](white dimmed)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)[\]](white dimmed)'
+format='[#](white dimmed)[\[](white dimmed)[$path]($style)[$read_only]($read_only_style)[\]](white dimmed)'
 
 
 [character]
@@ -163,76 +163,76 @@ vimcmd_symbol = '[;](#AE81ff)'
 # format = "$symbol"
 
 [aws]
-format = '[\[](black dimmed)[$symbol($profile)(\($region\))(\[$duration\])]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($profile)(\($region\))(\[$duration\])]($style)[\]](white dimmed)'
 
 [bun]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [c]
-format = '[\[](black dimmed)[$symbol($version(-$name))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version(-$name))]($style)[\]](white dimmed)'
 
 [cmake]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [cmd_duration]
 # format = '\[[⏰ $duration]($style)\]'
-format = '[\[](black dimmed)[⏱️ $duration]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[⏱️ $duration]($style)[\]](white dimmed)'
 
 [cobol]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [conda]
 symbol = ''
 style = 'fg:bright-green'
 # env="$(echo "${environment}" | sed 's/_.*-/-\*-/g')"
-format = '[#](black dimmed dimmed)[\[](#666666)[🐍 $symbol$environment]($style)[\]](#666666)'
+format = '[#](white dimmed dimmed)[\[](white dimmed)[🐍 $symbol$environment]($style)[\]](white dimmed)'
 
 [crystal]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [daml]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [dart]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [deno]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [docker_context]
-format = '[\[](black dimmed)[$symbol$context]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$context]($style)[\]](white dimmed)'
 
 [dotnet]
-format = '[\[](black dimmed)[$symbol($version)(🎯 $tfm)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)(🎯 $tfm)]($style)[\]](white dimmed)'
 
 [elixir]
-format = '[\[](black dimmed)[$symbol($version \(OTP $otp_version\))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version \(OTP $otp_version\))]($style)[\]](white dimmed)'
 
 [elm]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [erlang]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [fennel]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [fossil_branch]
-format = '[\[](black dimmed)[$symbol$branch]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$branch]($style)[\]](white dimmed)'
 
 [gcloud]
-format = '[\[](black dimmed)[$symbol$account(@$domain)(\($region\))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$account(@$domain)(\($region\))]($style)[\]](white dimmed)'
 
 [git_branch]
 symbol = '🌱 '
 # truncation_length = 12
 truncation_symbol = '...'
 # ignore_branches = ['master', 'main']
-format = '[\[](#444444)[$symbol$branch]($style)[\]](#444444)'
+format = '[\[](white dimmed)[$symbol$branch]($style)[\]](white dimmed)'
 
 [git_metrics]
 added_style = 'bold blue'
-format = '[\[](#444444)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](#444444) '
+format = '[\[](white dimmed)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](white dimmed) '
 
 # [git_status]
 # style = "bold italic bright-blue"
@@ -261,7 +261,7 @@ format = '[\[](#444444)[+$added]($added_style)/[-$deleted]($deleted_style)[\]](#
 # staged = '[++\($count\)](green)'
 # renamed = '👅'
 # deleted = '🗑'
-# format = '([[\[](black dimmed)$all_status$ahead_behind\]]($style))'
+# format = '([[\[](white dimmed)$all_status$ahead_behind\]]($style))'
 
 [git_status]
 conflicted = '🏳'
@@ -277,134 +277,143 @@ renamed = '👅'
 deleted = '🗑'
 
 [golang]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [gradle]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [guix_shell]
-format = '[\[](black dimmed)[$symbol]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol]($style)[\]](white dimmed)'
 
 [haskell]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [haxe]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [helm]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [hg_branch]
-format = '[\[](black dimmed)[$symbol$branch]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$branch]($style)[\]](white dimmed)'
 
 [java]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [julia]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [kotlin]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [kubernetes]
-format = '[\[](black dimmed)[$symbol$context( \($namespace\))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$context( \($namespace\))]($style)[\]](white dimmed)'
 
 [lua]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [memory_usage]
-format = '[\[](black dimmed)$symbol[$ram( | $swap)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)$symbol[$ram( | $swap)]($style)[\]](white dimmed)'
 
 [meson]
-format = '[\[](black dimmed)[$symbol$project]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$project]($style)[\]](white dimmed)'
 
 [nim]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [nix_shell]
-format = '[\[](black dimmed)[$symbol$state( \($name\))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$state( \($name\))]($style)[\]](white dimmed)'
 
 [nodejs]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [ocaml]
-format = '[\[](black dimmed)[$symbol($version)(\($switch_indicator$switch_name\))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)(\($switch_indicator$switch_name\))]($style)[\]](white dimmed)'
 
 [opa]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [openstack]
-format = '[\[](black dimmed)[$symbol$cloud(\($project\))]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$cloud(\($project\))]($style)[\]](white dimmed)'
 
 [os]
-format = '[\[](black dimmed)[$symbol]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol]($style)[\]](white dimmed)'
 
 [package]
-format = '[\[](black dimmed)[$symbol$version]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$version]($style)[\]](white dimmed)'
 
 [perl]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [php]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [pijul_channel]
-format = '[\[](black dimmed)[$symbol$channel]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$channel]($style)[\]](white dimmed)'
 
 [pulumi]
-format = '[\[](black dimmed)[$symbol$stack]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$stack]($style)[\]](white dimmed)'
 
 [purescript]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [python]
 symbol = '👻 '
 style = 'fg:cyan'
-# format = '[\(](#444444)[${symbol}${pyenv_prefix}${virtualenv}]($style)[\)](#444444)'
-# format = '[[\(](#444444)${symbol}${pyenv_prefix}${virtualenv}[\)](#444444)]($style)'
+# format = '[\(](white dimmed)[${symbol}${pyenv_prefix}${virtualenv}]($style)[\)](white dimmed)'
+# format = '[[\(](white dimmed)${symbol}${pyenv_prefix}${virtualenv}[\)](white dimmed)]($style)'
 # format = '[\[](#666666)[$symbol$environment]($style)[\]](#666666)'
 # format = '[\[](#cccccc)\[${symbol}${pyenv_prefix}$virtualenv\]($style)[\]](#cccccc)'
 # format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
-# format = '[(\[\[](#444444)${symbol}${pyenv_prefix})(\($virtualenv\))[\](#444444)]($style))\]'
-format = '[([\(](#444444)${symbol}${pyenv_prefix}($virtualenv)[\)](#444444))]($style)'
+# format = '[(\[\[](white dimmed)${symbol}${pyenv_prefix})(\($virtualenv\))[\](white dimmed)]($style))\]'
+format = '[([\(](white dimmed)${symbol}${pyenv_prefix}($virtualenv)[\)](white dimmed))]($style)'
 
 
 
 [raku]
-format = '[\[](black dimmed)[$symbol($version-$vm_version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version-$vm_version)]($style)[\]](white dimmed)'
 
 [red]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [ruby]
 format = ''
 
 [rust]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [scala]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [spack]
-format = '[\[](black dimmed)[$symbol$environment]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$environment]($style)[\]](white dimmed)'
 
 [sudo]
-format = '[\[](black dimmed)[as $symbol]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[as $symbol]($style)[\]](white dimmed)'
 
 [swift]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [terraform]
-format = '[\[](black dimmed)[$symbol$workspace]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol$workspace]($style)[\]](white dimmed)'
 
 [vagrant]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [vlang]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [zig]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
 
 [solidity]
-format = '[\[](black dimmed)[$symbol($version)]($style)[\]](black dimmed)'
+format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'
+
+
+[shell]
+disabled = false
+style = '#f968be'
+zsh_indicator = ''
+bash_indicator = ' '
+# Remove the space after (e.g. Bash: "bsh ❯" -> "bsh❯", Zsh: " ❯" -> "❯")
+format = '([$indicator]($style) )'
