@@ -1,4 +1,4 @@
-alias python="ptipython"
+# alias python="ptipython"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias gd="git dsf"
 alias gdiff="GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_NOGLOBAL=1 HOME= XDG_CONFIG_HOME= git diff"

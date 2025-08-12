@@ -925,7 +925,9 @@ zinit light-mode for \
     z-shell/F-Sy-H \
     jeffreytse/zsh-vi-mode \
     Aloxaf/fzf-tab \
-    joshskidmore/zsh-fzf-history-search
+    joshskidmore/zsh-fzf-history-search \
+    paoloantinori/hhighlighter
+
 
 ### End of Zinit's installer chunk
 # zvm_after_init_commands+=('source <(fzf --zsh)')
