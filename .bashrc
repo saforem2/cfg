@@ -76,3 +76,4 @@ if command -v atuin >/dev/null 2>&1; then
 fi
 
 [[ ! ${BLE_VERSION-} ]] || ble-attach
+. "$HOME/.cargo/env"
