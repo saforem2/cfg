@@ -41,7 +41,7 @@ elif [[ $(hostname) == x4* || $(hostname) == aurora* ]]; then
     set_proxy_alcf
     export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpFM05qZz0.lABjjxtOfsGrmaUJKqFOtiJt-BZxd9AmWlshGD6xnKA"
     # setup_alcf_env
-elif [[ $(hostname) == x1* || $(hostname) == uan* ]]; then
+elif [[ $(hostname) == x1* || $(hostname) == uan* || $(hostname) == sunspot* ]]; then
     local machine="Sunspot"
     export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpJd09URT0.7yHzS3Ccy2JelR4geEmLzu0UzHJJ_7IShND72zv-xyk"
     # # export HISTFILE="$HOME/.zsh_history-sunspot"
@@ -867,6 +867,8 @@ if [[ -f ~/.zshrc.d/functions/fzf_functions.sh ]]; then
     source ~/.zshrc.d/functions/fzf_functions.sh
 fi
 
+. "$HOME/.cargo/env"
+
 # vim: ts=4:sw=4:softtabstop=4:expandtab:autoindent
 
 # export NVM_DIR="$HOME/.nvm"
@@ -889,7 +891,6 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-. "$HOME/.cargo/env"
 # autoload -Uz compinit && compinit
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
