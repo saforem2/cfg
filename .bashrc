@@ -1,79 +1,56 @@
-# at the start of your .bashrc file
-[[ -f ~/.local/share/blesh/ble.sh ]] && [[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
+#!/bin/bash
 
+export HTTP_PROXY="http://proxy.alcf.anl.gov:3128"
+export HTTPS_PROXY="http://proxy.alcf.anl.gov:3128"
+export http_proxy="http://proxy.alcf.anl.gov:3128"
+export https_proxy="http://proxy.alcf.anl.gov:3128"
+export ftp_proxy="http://proxy.alcf.anl.gov:3128"
+
+. "$HOME/.cargo/env"
+. "$HOME/.atuin/bin/env"
 set -o vi
 
-setup_codestats() {
-    # Use cases
-    source <(curl -L https://bit.ly/ezpz-utils)
-    mn=$(ezpz_get_machine_name)
-    # cas
-    case "${mn}" in
-        *"sophia"*)
-            export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpNek9UYz0.IwZza04Vl83YpJWXm1tqH8tQtil74SkQtnmjGyM3h7c"
-            ;;
-        *"polaris"* | *"x3"*)
-            export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpBNE1UTT0.20nVrgzuPbOPdPqzhQ5-iAoFynrBpVz4SP3x7pWW2H0"
-            ;;
-        *"aurora"* | *"x4"*)
-            export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpFM05qZz0.lABjjxtOfsGrmaUJKqFOtiJt-BZxd9AmWlshGD6xnKA"
-            ;;
-        *"sunspot"* | *"x1"* | *"uan"* | *"bastion"*)
-            export CODESTATS_API_KEY="SFMyNTY.YzJGdFptOXlaVzFoYmc9PSMjTWpJd09URT0.7yHzS3Ccy2JelR4geEmLzu0UzHJJ_7IShND72zv-xyk"
-            ;;
-        *)
-            echo "Unknown machine: ${mn}"
-            ;;
-    esac
+# if [[ -f "${HOME}/.bash/profile" ]]; then
+#   source "${HOME}/.bash/profile"
+# fi
 
-}
+# if [[ -f "${HOME}/.bash/rc" ]]; then
+# 	source "${HOME}/.bash/rc"
+# fi
 
-[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home/foremans/.local/bin/micromamba'
+export MAMBA_ROOT_PREFIX='/home/foremans/.local/share/mamba'
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2>/dev/null)"
+if [ $? -eq 0 ]; then
+	eval "$__mamba_setup"
+else
+	alias micromamba="$MAMBA_EXE" # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/aurora/24.347.0/spack/unified/0.9.2/install/linux-sles15-x86_64/gcc-13.3.0/miniforge3-24.3.0-0-gfganax/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/aurora/24.347.0/spack/unified/0.9.2/install/linux-sles15-x86_64/gcc-13.3.0/miniforge3-24.3.0-0-gfganax/etc/profile.d/conda.sh" ]; then
+        . "/opt/aurora/24.347.0/spack/unified/0.9.2/install/linux-sles15-x86_64/gcc-13.3.0/miniforge3-24.3.0-0-gfganax/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/aurora/24.347.0/spack/unified/0.9.2/install/linux-sles15-x86_64/gcc-13.3.0/miniforge3-24.3.0-0-gfganax/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 # Source the Lazyman shell initialization for aliases and nvims selector
 # shellcheck source=.config/nvim-Lazyman/.lazymanrc
-[[ -f ~/.config/nvim-Lazyman/.lazymanrc ]] && source ~/.config/nvim-Lazyman/.lazymanrc
+[ -f ~/.config/nvim-Lazyman/.lazymanrc ] && source ~/.config/nvim-Lazyman/.lazymanrc
 # Source the Lazyman .nvimsbind for nvims key binding
 # shellcheck source=.config/nvim-Lazyman/.nvimsbind
-[[ -f ~/.config/nvim-Lazyman/.nvimsbind ]] && source ~/.config/nvim-Lazyman/.nvimsbind
-# Luarocks bin path
-[[ -d "${HOME}/.luarocks/bin" ]] && {
-    export PATH="${HOME}/.luarocks/bin${PATH:+:${PATH}}"
-}
-# cargo bin path
-[[ -f "${HOME}/.cargo/env" ]] && source "${HOME}/.cargo/env"
-# Perlbrew
-[[ -f "${HOME}/perl5/perlbrew/etc/bashrc" ]] && source "${HOME}/perl5/perlbrew/etc/bashrc"
-# x-cmd
-[[ ! -f "$HOME/.x-cmd.root/X" ]] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
-# bash-preexec
-[[ -f "${HOME}/.bash-preexec.sh" ]] && source "${HOME}/.bash-preexec.sh"
+[ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind
 
-export STARSHIP_CONFIG="${HOME}/.config/starship_bash.toml"
-[[ -f "${STARSHIP_CONFIG}" ]] && eval "$(starship init bash)"
-
-MACHINE=$(ezpz_get_machine_name | tr '[:upper:]' '[:lower:]')
-export PATH="${HOME}/bin/${MACHINE}:${PATH}"
-export HISTFILE="$HOME/.zsh_history-${MACHINE}"
-setup_codestats
-
-# # >>> mamba initialize >>>
-# # !! Contents within this block are managed by 'micromamba shell init' !!
-# export MAMBA_EXE='/home/foremans/.local/bin/micromamba';
-# export MAMBA_ROOT_PREFIX='/lus/flare/projects/Aurora_deployment/foremans/micromamba';
-# __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__mamba_setup"
-# else
-#     alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
-# fi
-# unset __mamba_setup
-# # <<< mamba initialize <<<
-
-if command -v atuin >/dev/null 2>&1; then
-    # shellcheck source=/dev/null
-    # source "$(atuin init bash-hook)"
-    eval "$(atuin init bash)"
-fi
-
-[[ ! ${BLE_VERSION-} ]] || ble-attach
-. "$HOME/.cargo/env"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

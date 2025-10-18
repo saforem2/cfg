@@ -10,11 +10,8 @@ $conda\
 $python\
 $line_break\
 $singularity\
-$kubernetes\
 $directory\
 $vcsh\
-$fossil_branch\
-$fossil_metrics\
 $git_branch\
 $git_commit\
 $git_state\
@@ -22,65 +19,24 @@ $git_metrics\
 $git_status\
 $hg_branch\
 $pijul_channel\
-$docker_context\
 $package\
 $c\
 $cmake\
-$cobol\
-$daml\
-$dart\
 $deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
-$gleam\
-$golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
-$java\
 $julia\
-$kotlin\
-$gradle\
 $lua\
 $nim\
 $nodejs\
-$ocaml\
-$opa\
-$perl\
-$php\
-$pulumi\
-$purescript\
 $quarto\
-$raku\
-$rlang\
-$red\
-$ruby\
 $rust\
-$scala\
-$solidity\
-$swift\
 $terraform\
 $typst\
-$vlang\
-$vagrant\
-$zig\
 $buf\
 $nix_shell\
-$meson\
 $spack\
 $memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
-$nats\
 $direnv\
 $env_var\
-$crystal\
 $custom\
 $sudo\
 $cmd_duration\
@@ -99,10 +55,10 @@ $container\
 $shell\
 $character"""
 
-scan_timeout = 5000
-command_timeout = 5000
-add_newline = false
-follow_symlinks = false
+# scan_timeout = 5000
+# command_timeout = 5000
+# add_newline = false
+# follow_symlinks = false
 
 [time]
 disabled = false
@@ -123,7 +79,9 @@ style_user = "fg:#66A4D3"
 disabled = true
 
 [hostname]
-style = "fg:#2094F3"
+# style = "fg:#2094F3"
+# style = "bg:#A6EDFF fg:#000000"
+style = "bg:#CCFFFF fg:#444444"
 format='[\[](white dimmed)[$hostname]($style)[\]](white dimmed)'
 # ssh_symbol="🤖"
 # format='[\[](white dimmed)[$ssh_symbol](bold) [$hostname]($style)[\]](white dimmed)'
@@ -153,14 +111,21 @@ repo_root_format='[#](white dimmed)[\[](white dimmed)[$before_root_path]($before
 format='[#](white dimmed)[\[](white dimmed)[$path]($style)[$read_only]($read_only_style)[\]](white dimmed)'
 
 
+# [character]
+# # success_symbol = '$'
+# # error_symbol = '[$](bold red) '
+# # success_symbol = '[\$](#D3FF3B)'
+# success_symbol = '[;](green)'
+# error_symbol = '[;](#FF5252)'
+# vimcmd_symbol = '[;](#AE81ff)'
+# # format = "$symbol"
 [character]
-# success_symbol = '$'
-# error_symbol = '[$](bold red) '
-# success_symbol = '[\$](#D3FF3B)'
 success_symbol = '[;](green)'
-error_symbol = '[;](#FF5252)'
-vimcmd_symbol = '[;](#AE81ff)'
-# format = "$symbol"
+error_symbol = '[;](red)'
+vimcmd_symbol = "  "
+vimcmd_replace_one_symbol = ""
+vimcmd_replace_symbol = ""
+vimcmd_visual_symbol = ""
 
 [aws]
 format = '[\[](white dimmed)[$symbol($profile)(\($region\))(\[$duration\])]($style)[\]](white dimmed)'
@@ -264,17 +229,17 @@ format = '[\[](white dimmed)[+$added]($added_style)/[-$deleted]($deleted_style)[
 # format = '([[\[](white dimmed)$all_status$ahead_behind\]]($style))'
 
 [git_status]
-conflicted = '🏳'
-ahead = '🏎💨'
-behind = '😰'
-diverged = '😵'
-up_to_date = '✓'
-untracked = '🤷'
+conflicted = '🚩'
+ahead = '📈'
+behind = '📉'
+diverged = '🪓'
+up_to_date = '✅'
+untracked = '🤫'
 stashed = '📦'
 modified = '📝'
 staged = '[++\($count\)](green)'
-renamed = '👅'
-deleted = '🗑'
+renamed = '✨'
+deleted = '♻️'
 
 [golang]
 format = '[\[](white dimmed)[$symbol($version)]($style)[\]](white dimmed)'

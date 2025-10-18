@@ -18,6 +18,7 @@ alias glog="git log --oneline --graph --all --decorate"
 alias gst="git status -uno"
 alias icat="kitty +kitten icat"
 alias mm="micromamba"
+# alias conda="micromamba"
 alias mpielastic='mpiexec --verbose --envall -n $NGPUS --ppn $NGPU_PER_HOST'
 alias mv="mv -vi"
 alias nvc="NVIM_APPNAME=nvim-nvc nvim"
