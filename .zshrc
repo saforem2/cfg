@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-[ -f ~/.zsh/startup ] && source ~/.zsh/startup
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # [ -f ~/miniconda3bin/conda ] && eval "$(${HOME}/miniconda3/bin/conda shell.zsh hook)"
 # Source the Lazyman shell initialization for aliases and nvims selector
