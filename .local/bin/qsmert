@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# if [[ -f ~/.local/bin/qsmer ]]; then
+qstat -wpa -u "${USER}"
+qstat -u "${USER}" -n1rw | sed -e "s/\/0\*208/\ /g" | tr "+|." "\ " | awk '{a = ""; for (i = 13 ; i <= NF ; i++) a = a " " $i; print $1 a}' | grep -Ev "aurora-pbs|Req|Job|\-\-" | grep -E "\ R\ "
+# fi
