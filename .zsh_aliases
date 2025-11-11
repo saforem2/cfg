@@ -1,0 +1,41 @@
+alias rm='rm -iv'
+alias zt='zathura'
+alias cp='cp -iv'
+alias mv='mv -iv'
+# alias ..='cd ..'
+alias ducks='sudo find . -type f -print0 | xargs -0 du -h | sort -r | head -20'
+alias rsync-copy="rsync -avz --progress -h"
+alias rsync-move="rsync -avz --progress -h --remove-source-files"
+alias rsync-update="rsync -avzu --progress -h"
+alias rsync-synchronize="rsync -avzu --delete --progress -h"
+alias gls='gls -ABFp --group-directories-first --color=auto'
+# alias ls="lsd -X -A --icon-theme=fancy --group-dirs=first -I '__pycache__' -I '*.DS_Store' -I '*.virtual_documents' -I '*.pyc' -I '*.ipynb_checkpoints'"
+
+alias d="kitty +kitten diff"
+alias icat="kitty +kitten icat"
+alias els="exa -x --icons --group-directories-first -F"
+
+alias bp="bat -p"
+alias cl="clear"
+alias cp="cp -iv"
+alias d="kitty +kitten diff"
+alias gpl='git pull'
+alias gpu='git push'
+alias gst="git status"
+alias mkdir="mkdir -pv"
+alias rm="/bin/rm -iv"
+alias cpr="/bin/cp -vr"
+
+alias ls="exa --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+alias lsgi="exa --git-ignore --all --icons --group-directories-first -F --ignore-glob '*.DS_Store|*.virtual_documents|*.pyc|*.ipynb_checkpoints|*DS*|*pyc*'"
+
+# alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+alias lg='lazygit'
+
+alias s="kitty +kitten ssh"
+alias julia18="/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia; exit"
