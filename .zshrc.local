@@ -915,7 +915,7 @@ bashcompinit
 
 compinit
 
-# export ATUIN_NOBIND="true"
+export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 bindkey -M viins '^s' atuin-search
 
